@@ -14,6 +14,6 @@ RUN pnpm install && pnpm build
 
 COPY --chown=node:node . .
 
-CMD [ "pnpm", "run" ]
+CMD [ "node", "dist/bot.js" ]
 
 EXPOSE 3000
