@@ -16,3 +16,4 @@ COPY --chown=node:node . .
 
 CMD [ "pnpm", "run" ]
 
+EXPOSE 3000
