@@ -1,13 +1,14 @@
 import express from 'express'
+import { AbstractProcess } from './AbstractProcess'
 
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+export const runServer = (processes: AbstractProcess[]) => {
+  app.get('/', (req, res) => {
+    res.send(processes.map(process => `${process.processStatus.name}: ${process.processStatus.status}`).join(';\n\n'))
+  })
 
-export const runServer = () => {
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })

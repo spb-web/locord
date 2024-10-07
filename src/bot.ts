@@ -15,7 +15,11 @@ const run = async () => {
 
   audioStream.setSource(env.AUDIO_STREAM_URL)
 
-  runServer()
+  runServer([
+    client,
+    voiceChat,
+    audioStream,
+  ])
 }
 
 run()
